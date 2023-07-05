@@ -1,0 +1,46 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.calendar {
+    display: flex;
+}
+
+.hours {
+    border-right: 1px solid #ccc;
+    min-width: 60px;
+    padding: 10px 5px;
+}
+
+.hour-row {
+    height: 60px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.events {
+    flex: 1;
+    padding: 10px;
+}
+
+/* Estilos específicos para la tabla de 8 horas */
+.hour-row:nth-child(2) {
+    height: 30px;
+}
+
+.hour-row:nth-child(2)~div {
+    height: calc((100% - 30px) / 7);
+}
+
+/* Estilos para los eventos (puedes ajustarlos según tus necesidades) */
+.event {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px;
+    margin-bottom: 5px;
+}
