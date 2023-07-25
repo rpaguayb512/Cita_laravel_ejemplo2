@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/citas', 'CitaController@index')->name('citas');
 Route::get('/', function () { return view('welcome'); });
 Route::post('/asignar-cita', 'CitaController@asignarCita')->name('asignar.cita');
+Route::get('/eliminar-cita/{id?}', 'CitaController@destroy')->name('eliminar.cita');
 Route::get('/pacientes/disponibles/{id?}', 'CitaController@obtenerPacientesDisponibles')->name('pacientes.disponibles');
 Route::resource('pacientes', 'PacienteController');
 

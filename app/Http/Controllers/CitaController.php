@@ -53,5 +53,28 @@ class CitaController extends Controller
         // Devolver una respuesta en formato JSON con los nombres de los pacientes disponibles
         return response()->json($pacientesDisponibles);
     }
+
+
+
+    public function  destroy(Request $request)
+    {
+        // Obtener los datos enviados en la solicitud
+        $hora = $request->input('id');
+
+        $cita = Cita::where('hora', '=', $hora);
+        
+        $cita->delete();
+         return redirect()->action('CitaController@index');
+        
+      
+    }
+
+
+
+
+
+
+
+
 }
 
